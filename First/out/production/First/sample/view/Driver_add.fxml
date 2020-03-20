@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.DriverAdd">
+   <children>
+      <TextField fx:id="AddDriverFirstName" layoutX="23.0" layoutY="32.0" promptText="Фамилия" />
+      <TextField fx:id="AddDriverLasttName" layoutX="23.0" layoutY="63.0" promptText="Имя" />
+      <TextField fx:id="AddDriverFatherName" layoutX="23.0" layoutY="95.0" promptText="Отчество" />
+      <TextField fx:id="AddDriversnils" layoutX="23.0" layoutY="188.0" promptText="СНИЛС" />
+      <TextField fx:id="AddDriverINN" layoutX="23.0" layoutY="222.0" promptText="ИНН" />
+      <TextField fx:id="AddDriverSeriaDriverCard" layoutX="23.0" layoutY="256.0" promptText="Серия ВУ" />
+      <TextField fx:id="AddDriverNumberDriverCard" layoutX="23.0" layoutY="290.0" promptText="Номер ВУ" />
+      <Button fx:id="add_driver" layoutX="509.0" layoutY="32.0" mnemonicParsing="false" text="Добавить" />
+      <Button fx:id="retur_btn" layoutX="509.0" layoutY="63.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="Отмена" />
+      <TextField fx:id="AddDriverSeriaPassport" layoutX="204.0" layoutY="32.0" promptText="Паспорт Серия" />
+      <TextField fx:id="AddDriverNumberPassport" layoutX="204.0" layoutY="63.0" promptText="Паспорт номер" />
+      <TextField fx:id="AddDriverCodPassport" layoutX="204.0" layoutY="95.0" promptText="Код подразделения" />
+      <TextArea fx:id="AddDriverWhoPassport" layoutX="204.0" layoutY="170.0" prefHeight="77.0" prefWidth="260.0" promptText="Кем выдан" />
+      <TextField fx:id="AddDriverTellNumb1" layoutX="204.0" layoutY="256.0" promptText="Телефон" />
+      <TextField fx:id="AddDriverTellNumb2" layoutX="204.0" layoutY="290.0" promptText="Телефон" />
+      <TextField fx:id="regestration" layoutX="204.0" layoutY="323.0" prefHeight="25.0" prefWidth="365.0" promptText="Зарегестрирован" />
+      <DatePicker fx:id="AddDriverDatePassport" layoutX="204.0" layoutY="128.0" promptText="Дата выдачи" />
+      <DatePicker fx:id="AddDriverBerdDay" layoutX="23.0" layoutY="128.0" promptText="Дата рождения" />
+      <DatePicker fx:id="AddDriverDateDriverCard" layoutX="23.0" layoutY="323.0" promptText="Дата выдачи  ВУ" />
+   </children>
+</AnchorPane>
