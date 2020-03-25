@@ -1,23 +1,19 @@
 package sample.Controllers;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-import com.j256.ormlite.jdbc.JdbcConnectionSource;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import org.jetbrains.annotations.NotNull;
-import sample.ConnectorToMYSQL.Connector;
+import sample.Main;
 import sample.SetGet.SetDriver;
-import sample.TablesClasses.Driver_table;
 
-public class DriverAdd {
+public class DriverAdd extends Controller {
 
     @FXML
     private AnchorPane Pane_driver;
@@ -86,15 +82,12 @@ public class DriverAdd {
     private DatePicker AddDriverDateDriverCard;
 
 
-    @FXML
+    @Override
     void initialize() {
         retur_btn.setOnAction(actionEvent ->{
-                retur_btn.getScene().getWindow().hide();
-                });
-        // Регулярное выражение для инн (10-12 цифр , не начинается с нуля)
-       //AddDriverINN.setTextFormatter(new TextFormatter<>(change ->
-        //     (change.getText().matches("(^(?!0.*$)([0-9]{12})$)|(^(?!0.*$)([0-9]{10})$)")) ? change : ));
-       // AddDriverINN.setTextFormatter(new TextFormatter<>(  ));
+            retur_btn.getScene().getWindow().hide();
+        });
+
         AddDriverNumberDriverCard.setTextFormatter(new TextFormatter<>(change ->
                 (change.getControlNewText().matches("([1-9][0-9]*)?")) ? change : null));
         add_driver.setOnAction(actionEvent -> {
@@ -120,21 +113,17 @@ public class DriverAdd {
             Date driver_dop_dat = java.sql.Date.valueOf(driver_dop);
 
             if(!first_name.equals("") && !father_name.equals("") && !last_name.equals("")) {
-                try {
-                    SetDriver.Set(first_name,last_name,
-                            father_name,birthday_dat,
-                            driver_snils,driver_inn,
-                            driver_sdc, driver_ndc,
-                            driver_ddc_dat, driver_sop,
-                            driver_nop, driver_cop,
-                            driver_dop_dat, driver_wop,
-                            driver_phone, driver_reg);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                Driver_table driver = new Driver_table();
+                SetDriver first = new  SetDriver(first_name,last_name,
+                        father_name,birthday_dat,
+                        driver_snils,driver_inn,
+                        driver_sdc, driver_ndc,
+                        driver_ddc_dat, driver_sop,
+                        driver_nop, driver_cop,
+                        driver_dop_dat, driver_wop,
+                        driver_phone, driver_reg);
+                Thread newThrd = new Thread(first);
+                newThrd.start();
+
 
                 System.out.println("Polya zapolneny");
             }
@@ -162,5 +151,7 @@ public class DriverAdd {
         assert regestration != null : "fx:id=\"regestration\" was not injected: check your FXML file 'Driver_add.fxml'.";
         assert retur_btn != null : "fx:id=\"retur_btn\" was not injected: check your FXML file 'Driver_add.fxml'.";
 
+
     }
+
 }
