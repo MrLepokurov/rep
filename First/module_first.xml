@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_first" default="compile.module.first">
+  <dirname property="module.first.basedir" file="${ant.file.module_first}"/>
+  
+  <property name="module.jdk.home.first" value="${jdk.home.12}"/>
+  <property name="module.jdk.bin.first" value="${jdk.bin.12}"/>
+  <property name="module.jdk.classpath.first" value="jdk.classpath.12"/>
+  
+  <property name="compiler.args.first" value="-encoding UTF-8 -source 12 -target 12 ${compiler.args}"/>
+  
+  <property name="first.output.dir" value="${module.first.basedir}/out/production/First"/>
+  <property name="first.testoutput.dir" value="${module.first.basedir}/out/test/First"/>
+  
+  <path id="first.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="first.module.production.classpath">
+    <path refid="${module.jdk.classpath.first}"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx.controls.jar"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx-swt.jar"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx.base.jar"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx.fxml.jar"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx.graphics.jar"/>
+    <pathelement location="D:/Программирование/mysql-connector-java-8.0.19.jar"/>
+    <pathelement location="D:/Программирование/ormlite-core-5.1.jar"/>
+    <pathelement location="D:/Программирование/ormlite-jdbc-5.1.jar"/>
+    <pathelement location="${path.variable.maven_repository}/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar"/>
+    <pathelement location="D:/Программирование/wialon-sdk-1.3.57.jar"/>
+  </path>
+  
+  <path id="first.runtime.production.module.classpath">
+    <pathelement location="${first.output.dir}"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx.controls.jar"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx-swt.jar"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx.base.jar"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx.fxml.jar"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx.graphics.jar"/>
+    <pathelement location="D:/Программирование/mysql-connector-java-8.0.19.jar"/>
+    <pathelement location="D:/Программирование/ormlite-core-5.1.jar"/>
+    <pathelement location="D:/Программирование/ormlite-jdbc-5.1.jar"/>
+    <pathelement location="${path.variable.maven_repository}/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar"/>
+    <pathelement location="D:/Программирование/wialon-sdk-1.3.57.jar"/>
+  </path>
+  
+  <path id="first.module.classpath">
+    <pathelement location="${first.output.dir}"/>
+    <path refid="${module.jdk.classpath.first}"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx.controls.jar"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx-swt.jar"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx.base.jar"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx.fxml.jar"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx.graphics.jar"/>
+    <pathelement location="D:/Программирование/mysql-connector-java-8.0.19.jar"/>
+    <pathelement location="D:/Программирование/ormlite-core-5.1.jar"/>
+    <pathelement location="D:/Программирование/ormlite-jdbc-5.1.jar"/>
+    <pathelement location="${path.variable.maven_repository}/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar"/>
+    <pathelement location="D:/Программирование/wialon-sdk-1.3.57.jar"/>
+  </path>
+  
+  <path id="first.runtime.module.classpath">
+    <pathelement location="${first.testoutput.dir}"/>
+    <pathelement location="${first.output.dir}"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx.controls.jar"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx-swt.jar"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx.base.jar"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx.fxml.jar"/>
+    <pathelement location="${basedir}/../../../../Program Files/Java/jdk-12.0.1/lib/javafx-sdk-11.0.2/lib/javafx.graphics.jar"/>
+    <pathelement location="D:/Программирование/mysql-connector-java-8.0.19.jar"/>
+    <pathelement location="D:/Программирование/ormlite-core-5.1.jar"/>
+    <pathelement location="D:/Программирование/ormlite-jdbc-5.1.jar"/>
+    <pathelement location="${path.variable.maven_repository}/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar"/>
+    <pathelement location="D:/Программирование/wialon-sdk-1.3.57.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.first">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.first">
+    <patternset refid="excluded.from.module.first"/>
+  </patternset>
+  
+  <path id="first.module.sourcepath">
+    <dirset dir="${module.first.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.first" depends="compile.module.first.production,compile.module.first.tests" description="Compile module First"/>
+  
+  <target name="compile.module.first.production" depends="register.custom.compilers" description="Compile module First; production classes">
+    <mkdir dir="${first.output.dir}"/>
+    <javac2 destdir="${first.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.first}/javac">
+      <compilerarg line="${compiler.args.first}"/>
+      <bootclasspath refid="first.module.bootclasspath"/>
+      <classpath refid="first.module.production.classpath"/>
+      <src refid="first.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.first"/>
+    </javac2>
+    
+    <copy todir="${first.output.dir}">
+      <fileset dir="${module.first.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.first.tests" depends="register.custom.compilers,compile.module.first.production" description="compile module First; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.first" description="cleanup module">
+    <delete dir="${first.output.dir}"/>
+    <delete dir="${first.testoutput.dir}"/>
+  </target>
+</project>
